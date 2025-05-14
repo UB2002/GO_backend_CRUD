@@ -1,0 +1,341 @@
+{
+	"info": {
+		"_postman_id": "35fd93bc-3fdd-4dc5-8b69-8c52500a656b",
+		"name": "GO_Backend Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34170231"
+	},
+	"item": [
+		{
+			"name": "login_Doc_and_recip",
+			"item": [
+				{
+					"name": "Recip_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"receptionist1\",\r\n  \"password\": \"pass123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Doc_login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"username\":\"doctor1\",\r\n    \"password\":\"pass123\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recip_routes",
+			"item": [
+				{
+					"name": "Create_patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzkzMjYsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.2KQI4XxcFe1HFqjLZJlWYWlzwr9ZGohaOjGG6_VHwpM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Joe Rogan\",\r\n  \"age\": 30,\r\n  \"gender\": \"male\",\r\n  \"notes\": \"No known allergies\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/patients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List_all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzUwNzQsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.r0_c5VWq5YtDMVCBdq0jOumFYIBve8VffKZXLvwXU7o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/patients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_patient_by_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0Mzc4NDQsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.wLgvzuPHXFSNVa23GJqNYBFHjiY5S-1Fw1TTrzjmJa0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/patients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0Mzc4NDQsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.wLgvzuPHXFSNVa23GJqNYBFHjiY5S-1Fw1TTrzjmJa0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Joe Rogan\",\r\n      \"age\": 30,\r\n      \"gender\": \"male\",\r\n      \"Notes\":\"discharge\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/patients/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0Mzc4NDQsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.wLgvzuPHXFSNVa23GJqNYBFHjiY5S-1Fw1TTrzjmJa0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/patients/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doc_routes",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzkyNzQsInJvbGUiOiJkb2N0b3IiLCJzdWIiOjJ9.CmSCm5hxLT2BNHbnm6T8eHec3zsjy2k0k_NRe7BdEmU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/patients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzkyNzQsInJvbGUiOiJkb2N0b3IiLCJzdWIiOjJ9.CmSCm5hxLT2BNHbnm6T8eHec3zsjy2k0k_NRe7BdEmU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/patients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzkzNzYsInJvbGUiOiJkb2N0b3IiLCJzdWIiOjJ9.p9JTB29fLim-GQO74tzUMi7zCsQxK7DsuAmokAajsv8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Name\": \"John Doe\",\r\n        \"Age\": 30,\r\n        \"Gender\": \"male\",\r\n        \"Notes\": \" icu \"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/patients/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_patient Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDc0MzUwNzQsInJvbGUiOiJyZWNlcHRpb25pc3QiLCJzdWIiOjF9.r0_c5VWq5YtDMVCBdq0jOumFYIBve8VffKZXLvwXU7o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Joe Rogan\",\r\n  \"age\": 30,\r\n  \"gender\": \"male\",\r\n  \"notes\": \"No known allergies\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/patients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}
