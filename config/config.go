@@ -39,7 +39,7 @@ func ConnectDB(c *Config) *gorm.DB {
     if err != nil {
         panic(err)
     }
-    db.AutoMigrate(&models.User{}, &models.Patient{})
 	  seedUsers(db)
+    db.AutoMigrate(&models.User{}, &models.Patient{})
     return db
 }
